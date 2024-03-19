@@ -19,14 +19,14 @@ public class MovieController {
     private MovieService movieService;
 
     @GetMapping
-    public ResponseEntity<List<Movies>> getAllMovies() {
+    public ResponseEntity<List<Movie>> getAllMovies() {
 
-        return new ResponseEntity<List<Movies>>(movieService.allMovies(), HttpStatus.OK);
+        return new ResponseEntity<List<Movie>>(movieService.allMovies(), HttpStatus.OK);
     }
 
     @GetMapping("/{imdbId}")
-    public ResponseEntity<Optional<Movies>> getSingleMovie(@PathVariable String imdbId){
+    public ResponseEntity<Optional<Movie>> getSingleMovie(@PathVariable String imdbId){
 
-        return new ResponseEntity<Optional<Movies>>(movieService.SingleMovie(imdbId), HttpStatus.OK);
+        return new ResponseEntity<Optional<Movie>>(movieService.SingleMovie(imdbId), HttpStatus.OK);
     }
 }
